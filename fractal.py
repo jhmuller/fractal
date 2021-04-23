@@ -286,11 +286,11 @@ class Decompressor(object):
 
 
 if __name__ == '__main__':
-    colimg = mpimg.imread("fopu-staircase.JPG")
+    colimg = mpimg.imread("jpeg420exif.jpg")
     big_img = ImageUtils.rgb2gray(colimg)
-    print(big_img.shape)
-    small_img = ImageUtils.spatial_shrink(big_img, spatial_factor=32)
-    print(small_img.shape)
+    print("original shape: {0}, {1}".format(big_img.shape[0], big_img.shape[1]))
+    small_img = ImageUtils.spatial_shrink(big_img, spatial_factor=8)
+    print("shrunken shape: {0}, {1}".format(small_img.shape[0], small_img.shape[1]))
 
     # params
     spatial_factor = 2
